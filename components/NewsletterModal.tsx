@@ -43,8 +43,8 @@ export default function NewsletterModal({ onClose }: NewsletterModalProps) {
                 {hasSignedUp && <MailSentState />}
                 {!hasSignedUp && (
                   <>
-                    <Title>Are you ready to enroll to the best newsletter ever?</Title>
-                    <Row>
+                    <Title>Stay Tuned, we are working on something {"{"}amazing{"}"}</Title>
+                    {/* <Row>
                       <CustomInput
                         value={email}
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
@@ -54,7 +54,7 @@ export default function NewsletterModal({ onClose }: NewsletterModalProps) {
                       <CustomButton as="button" type="submit" disabled={hasSignedUp}>
                         Submit
                       </CustomButton>
-                    </Row>
+                    </Row> */}
                     {message && <ErrorMessage dangerouslySetInnerHTML={{ __html: message as string }} />}
                   </>
                 )}
@@ -78,7 +78,6 @@ const Card = styled.form`
   max-width: 70rem;
   overflow: hidden;
   color: rgb(var(--text));
-
   ${media('<=tablet')} {
     padding: 7.5rem 2.5rem;
   }
@@ -88,7 +87,6 @@ const CloseIconContainer = styled.div`
   position: absolute;
   right: 2rem;
   top: 2rem;
-
   svg {
     cursor: pointer;
     width: 2rem;
@@ -101,15 +99,14 @@ const Title = styled.div`
   line-height: 1.1;
   letter-spacing: -0.03em;
   text-align: center;
-  color: rgb(var(--text));
-
+  color: white;
   ${media('<=tablet')} {
     font-size: 2.6rem;
   }
 `;
 
 const ErrorMessage = styled.p`
-  color: rgb(var(--errorColor));
+  // color: rgb(var(--errorColor));
   font-size: 1.5rem;
   margin: 1rem 0;
   text-align: center;
@@ -122,7 +119,6 @@ const Row = styled.div`
   height: 100%;
   width: 100%;
   margin-top: 3rem;
-
   ${media('<=tablet')} {
     flex-direction: column;
   }
@@ -133,7 +129,6 @@ const CustomButton = styled(Button)`
   padding: 1.8rem;
   margin-left: 1.5rem;
   box-shadow: var(--shadow-lg);
-
   ${media('<=tablet')} {
     width: 100%;
     margin-left: 0;
@@ -143,7 +138,6 @@ const CustomButton = styled(Button)`
 
 const CustomInput = styled(Input)`
   width: 60%;
-
   ${media('<=tablet')} {
     width: 100%;
   }

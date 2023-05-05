@@ -7,14 +7,23 @@ import Container from 'components/Container';
 import { media } from 'utils/media';
 
 const PARTNER_LOGOS = [
-  'logoipsum-logo-1.svg',
-  'logoipsum-logo-2.svg',
-  'logoipsum-logo-3.svg',
-  'logoipsum-logo-4.svg',
-  'logoipsum-logo-5.svg',
-  'logoipsum-logo-6.svg',
-  'logoipsum-logo-7.svg',
+  'university-of-california-berkeley-logo-vector.svg',
+  'uc-davis-logo.png',
+  'uc-merced-seeklogo.com.svg',
+  'uc berkeley.png',
+  'image2vector (1).svg',
+  'UC Riverside Highlanders.svg',
+  'UC Santa Cruz Banana Slug UCSC.svg',
+  'HDI-Logo.svg_.png'
 ];
+
+function isHDI(logo: string) {
+  return logo == 'HDI-Logo.svg_.png';
+}
+
+function isNotHDI(logo: string) {
+  return logo != 'HDI-Logo.svg_.png';
+}
 
 export default function Partners() {
   return (
@@ -34,9 +43,14 @@ export default function Partners() {
         }}
         className="swiper-wrapper"
       >
-        {PARTNER_LOGOS.map((logo) => (
+        {PARTNER_LOGOS.filter(isNotHDI).map((logo, index) => (
           <SwiperSlide key={logo}>
-            <NextImage src={'/partners/' + logo} alt={normalizePartnerLogoName(logo)} width={128} height={128} />
+            <NextImage src={'/partners/' + logo} alt={normalizePartnerLogoName(logo)} width={128} height={128}/>
+          </SwiperSlide>
+        ))}
+        {PARTNER_LOGOS.filter(isHDI).map((logo, index) => (
+          <SwiperSlide key={logo} style={{marginTop : 35}}>
+            <NextImage src={'/partners/' + logo} alt={normalizePartnerLogoName(logo)} width={128} height={58} />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -53,7 +67,8 @@ const Title = styled.h3`
   letter-spacing: 0.02em;
   line-height: 0;
   text-transform: uppercase;
-  margin-bottom: 2rem;
+  
+  margin-bottom: 5rem;
   text-align: center;
   opacity: 0.8;
 
@@ -66,12 +81,11 @@ const PartnersWrapper = styled(Container)`
   .swiper-wrapper {
     will-change: transform;
     transition-timing-function: linear;
-    margin-top: 0.5rem;
     user-select: none;
   }
 
   .swiper-slide {
-    opacity: 0.8;
+    opacity: 1;
     transition: opacity 0.2s;
 
     &:hover {

@@ -49,7 +49,7 @@ export default function FormSection() {
 
   return (
     <Wrapper>
-      <Form onSubmit={handleSubmit(onSubmit)}>
+      
         {hasErrored && <ErrorMessage>Couldn&apos;t send email. Please try again.</ErrorMessage>}
         <InputGroup>
           <InputStack>
@@ -74,7 +74,7 @@ export default function FormSection() {
         <Button as="button" type="submit" disabled={isSubmitDisabled}>
           Send Message
         </Button>
-      </Form>
+      
     </Wrapper>
   );
 }

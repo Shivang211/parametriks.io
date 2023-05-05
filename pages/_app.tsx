@@ -20,10 +20,9 @@ import { NewsletterModalContextProvider, useNewsletterModalContext } from 'conte
 import { NavItems } from 'types';
 
 const navItems: NavItems = [
-  { title: 'Awesome SaaS Features', href: '/features' },
-  { title: 'Pricing', href: '/pricing' },
-  { title: 'Contact', href: '/contact' },
-  { title: 'Sign up', href: '/sign-up', outlined: true },
+  { title: 'What We Do', href: '#what-we-do' },
+  { title: 'Application Spectrum', href: '#application-spectrum' },
+  { title: 'Dashboard', href: '#na', outlined: true },
 ];
 
 const TinaCMS = dynamic(() => import('tinacms'), { ssr: false });
@@ -48,6 +47,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ColorModeScript />
       <GlobalStyle />
 
+      
+
       <Providers>
         <Modals />
         <Navbar items={navItems} />
@@ -68,7 +69,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         >
           <Component {...pageProps} />
         </TinaEditProvider>
-        <WaveCta />
+        {/* <WaveCta /> */}
         <Footer />
       </Providers>
     </>

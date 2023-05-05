@@ -7,20 +7,19 @@ import OverTitle from './OverTitle';
 import RichText from './RichText';
 
 export interface BasicSectionProps {
+  // id : string;
   imageUrl: string;
   title: string;
-  overTitle: string;
   reversed?: boolean;
 }
 
-export default function BasicSection({ imageUrl, title, overTitle, reversed, children }: PropsWithChildren<BasicSectionProps>) {
+export default function BasicSection({ imageUrl, title, reversed, children }: PropsWithChildren<BasicSectionProps>) {
   return (
     <BasicSectionWrapper reversed={reversed}>
       <ImageContainer>
         <NextImage src={imageUrl} alt={title} layout="fill" objectFit="cover" />
       </ImageContainer>
       <ContentContainer>
-        <CustomOverTitle>{overTitle}</CustomOverTitle>
         <Title>{title}</Title>
         <RichText>{children}</RichText>
       </ContentContainer>
@@ -32,13 +31,16 @@ const Title = styled.h1`
   font-size: 5.2rem;
   font-weight: bold;
   line-height: 1.1;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   letter-spacing: -0.03em;
+  margin-top : 4rem;
 
   ${media('<=tablet')} {
     font-size: 4.6rem;
     margin-bottom: 2rem;
+    height 
   }
+
 `;
 
 const CustomOverTitle = styled(OverTitle)`
@@ -52,6 +54,7 @@ const ImageContainer = styled.div`
   &:before {
     display: block;
     content: '';
+    height : 100%
     width: 100%;
     padding-top: calc((9 / 16) * 100%);
   }

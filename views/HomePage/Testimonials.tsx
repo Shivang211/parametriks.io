@@ -41,7 +41,7 @@ const TESTIMONIALS = [
 export default function Testimonials() {
   return (
     <div>
-      <Separator />
+      <Separator id = 'testimonials'/>
       <TestimonialsWrapper>
         <Swiper modules={[Navigation, Autoplay, A11y]} slidesPerView={1} autoplay={{ delay: 8000 }} centeredSlides navigation loop>
           {TESTIMONIALS.map((singleTestimonial, idx) => (

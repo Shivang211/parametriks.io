@@ -77,9 +77,9 @@ export default function Navbar({ items }: NavbarProps) {
             <NavItem key={singleItem.href} {...singleItem} />
           ))}
         </NavItemList>
-        <ColorSwitcherContainer>
+        {/* <ColorSwitcherContainer>
           <ColorSwitcher />
-        </ColorSwitcherContainer>
+        </ColorSwitcherContainer> */}
         <HamburgerMenuWrapper>
           <HamburgerIcon aria-label="Toggle menu" onClick={toggle} />
         </HamburgerMenuWrapper>
@@ -111,6 +111,8 @@ function NavItem({ href, title, outlined }: SingleNavItem) {
 const CustomButton = styled(Button)`
   padding: 0.75rem 1.5rem;
   line-height: 1.8;
+  background-color : #520CFA;
+  border-color : #520CFA;
 `;
 
 const NavItemList = styled.div`
@@ -171,14 +173,14 @@ const NavbarContainer = styled.div<NavbarContainerProps>`
   height: 8rem;
   z-index: var(--z-navbar);
 
-  background-color: rgb(var(--navbarBackground));
+  background-color: black;
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
-  visibility: ${(p) => (p.hidden ? 'hidden' : 'visible')};
-  transform: ${(p) => (p.hidden ? `translateY(-8rem) translateZ(0) scale(1)` : 'translateY(0) translateZ(0) scale(1)')};
+  // visibility: ${(p) => (p.hidden ? 'hidden' : 'visible')};
+  // transform: ${(p) => (p.hidden ? `translateY(-8rem) translateZ(0) scale(1)` : 'translateY(0) translateZ(0) scale(1)')};
 
-  transition-property: transform, visibility, height, box-shadow, background-color;
-  transition-duration: 0.15s;
-  transition-timing-function: ease-in-out;
+  // transition-property: transform, visibility, height, box-shadow, background-color;
+  // transition-duration: 0.15s;
+  // transition-timing-function: ease-in-out;
 `;
 
 const Content = styled(Container)`

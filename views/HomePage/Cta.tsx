@@ -10,27 +10,20 @@ import { media } from 'utils/media';
 
 export default function Cta() {
   return (
-    <CtaWrapper>
+    <CtaWrapper id = 'our-awesome-team'>
       <Container>
         <Stack>
-          <OverTitle>Lorem ipsum dolor sit amet</OverTitle>
-          <SectionTitle>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus delectus?</SectionTitle>
-          <Description>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda beatae accusamus deleniti nihil quas tempora numquam, vitae
-            culpa.
-          </Description>
-          <ButtonGroup>
-            <NextLink href="#early-access" passHref>
+          {/* <OverTitle>Lorem ipsum dolor sit amet</OverTitle> */}
+          <SectionTitle >Our {"{"}Awesome{"}"} Team</SectionTitle>
+          <img src = "Screenshot 2023-04-20 at 11.15.30 AM.png" style = {{marginLeft : '0rem'}}/>
+          {/* <ButtonGroup>
+            <NextLink href="#nothing" passHref>
               <Button>
-                Subscribe to the newsletter <span>&rarr;</span>
+                Contact Us <span>&rarr;</span>
               </Button>
             </NextLink>
-            <NextLink href="#whitepaper" passHref>
-              <OutlinedButton transparent>
-                Features <span>&rarr;</span>
-              </OutlinedButton>
-            </NextLink>
-          </ButtonGroup>
+            
+          </ButtonGroup> */}
         </Stack>
       </Container>
     </CtaWrapper>
@@ -39,14 +32,14 @@ export default function Cta() {
 
 const Description = styled.div`
   font-size: 1.8rem;
-  color: rgba(var(--textSecondary), 0.8);
+  color: black, 0.8);
 `;
 
 const Stack = styled.div`
   display: flex;
   flex-direction: column;
   padding: 12.5rem 0;
-  color: rgb(var(--textSecondary));
+  color: black;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -72,5 +65,6 @@ const OutlinedButton = styled(Button)`
 `;
 
 const CtaWrapper = styled.div`
-  background: rgb(var(--secondary));
+  background: white;
+  padding-top : 3rem;
 `;

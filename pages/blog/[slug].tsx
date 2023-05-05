@@ -55,6 +55,8 @@ export default function SingleArticlePage(props: InferGetStaticPropsType<typeof 
   if (!data) {
     return null;
   }
+  
+  // @ts-ignore
   const { title, description, date, tags, imageUrl } = data.getPostsDocument.data as NonNullableChildrenDeep<Posts>;
   const meta = { title, description, date: date, tags, imageUrl, author: '' };
   const formattedDate = formatDate(new Date(date));
@@ -102,10 +104,10 @@ export async function getStaticPaths() {
       fallback: false,
     };
   }
-
+  // @ts-ignore
   type NullAwarePostsList = { getPostsList: NonNullableChildrenDeep<Query['getPostsList']> };
   return {
-    paths: (postsListData as NullAwarePostsList).getPostsList.edges.map((edge) => ({
+    paths: (postsListData as NullAwarePostsList).getPostsList.edges.map((edge: { node: { sys: { basename: string; }; }; }) => ({
       params: { slug: normalizePostName(edge.node.sys.basename) },
     })),
     fallback: false,
@@ -137,6 +139,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
   const data = (await staticRequest({
     query: query,
     variables: variables,
+    // @ts-ignore
   })) as { getPostsDocument: PostsDocument };
 
   return {

@@ -20,69 +20,65 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
         <title>{EnvVars.SITE_NAME}</title>
         <meta
           name="description"
-          content="Tempor nostrud velit fugiat nostrud duis incididunt Lorem deserunt est tempor aute dolor ad elit."
+          content="Parametriks"
         />
       </Head>
       <HomepageWrapper>
         <WhiteBackgroundContainer>
           <Hero />
           <Partners />
-          <BasicSection imageUrl="/demo-illustration-1.svg" title="Lorem ipsum dolor sit amet consectetur." overTitle="sit amet gogo">
+          <br id = 'what-we-do'></br>
+          <BasicSection  imageUrl="/7sYl.gif" title="What We Do">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore
-              voluptate quo deleniti animi laboriosam.{' '}
-              <Link href="/help-center">Possimus ullam velit rem itaque consectetur, in distinctio?</Link> Lorem ipsum, dolor sit amet
-              consectetur adipisicing elit. Soluta repellendus quia quos obcaecati nihil. Laudantium non accusantium, voluptate eum nesciunt
-              at suscipit quis est soluta?
+            We aim at revolutionizing the integration of unparalleled and unique risk assessment data points in the way insurance services are designed.
+            </p>
+            <br></br>
+            <p>
+Composed of {"{"}very{"}"} qualified data scientist and software engineers, our team Thinks, reThinks, Tests, Modifies, reTests, Implements and Erases any frontier that would curb the road for insurance companies and brokers to deliver parametric insurance X.0 (establishing new “standards”).
+
             </p>
           </BasicSection>
-          <BasicSection imageUrl="/demo-illustration-2.svg" title="Lorem ipsum dolor sit." overTitle="lorem ipsum" reversed>
+          <br id = 'application-spectrum'></br>
+          <BasicSection  imageUrl="/giphy.gif" title="Application Spectrum" reversed>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore{' '}
-              <strong>voluptate quo deleniti animi laboriosam</strong>. Possimus ullam velit rem itaque consectetur, in distinctio?
+            We {"{"}widely{"}"} broaden parametric insurance’s scope.<br></br>
+Mainly focused on technologies that can be embedded in insurance products, our work reimagines the way brokers and big insurance companies generate, receive and then analyze data to optimize policies and make their clients at the center of everything.
             </p>
-            <ul>
-              <li>Professional point 1</li>
-              <li>Professional remark 2</li>
-              <li>Professional feature 3</li>
-            </ul>
           </BasicSection>
+      
         </WhiteBackgroundContainer>
-        <DarkerBackgroundContainer>
-          <Cta />
-          <FeaturesGallery />
-          <Features />
-          <Testimonials />
-          <ScrollableBlogPosts posts={posts} />
-        </DarkerBackgroundContainer>
+        
       </HomepageWrapper>
     </>
   );
 }
 
+
 const HomepageWrapper = styled.div`
   & > :last-child {
     margin-bottom: 15rem;
+    background: black;
   }
 `;
 
 const DarkerBackgroundContainer = styled.div`
-  background: rgb(var(--background));
+  background: black;
 
   & > *:not(:first-child) {
-    margin-top: 15rem;
+    margin-top: 10rem;
   }
 `;
 
 const WhiteBackgroundContainer = styled.div`
-  background: rgb(var(--secondBackground));
+  background: black;
 
   & > :last-child {
-    padding-bottom: 15rem;
+    // padding-bottom: 5rem;
+    background: black;
   }
 
   & > *:not(:first-child) {
-    margin-top: 15rem;
+    margin-top: 10rem;
   }
 `;
 

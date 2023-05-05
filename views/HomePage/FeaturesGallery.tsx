@@ -74,10 +74,10 @@ export default function FeaturesGallery() {
   }
 
   return (
-    <FeaturesGalleryWrapper>
+    <FeaturesGalleryWrapper  id = 'what-do-we-offer'>
       <Content>
-        <OverTitle>features</OverTitle>
-        <SectionTitle>What are you signing in for?</SectionTitle>
+        {/* <OverTitle>features</OverTitle> */}
+        <SectionTitle>What Do We Offer?</SectionTitle>
       </Content>
       <GalleryWrapper>
         <TabsContainer>{tabsMarkup}</TabsContainer>
@@ -92,6 +92,7 @@ const FeaturesGalleryWrapper = styled(Container)`
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  padding-top : 10rem
 `;
 
 const GalleryWrapper = styled.div`

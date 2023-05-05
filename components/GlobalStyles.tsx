@@ -11,29 +11,34 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 
+
+html {
+  scroll-behavior: smooth;
+}
+
 .next-light-theme {
-  --background: 251,251,253;
-  --secondBackground: 255,255,255;
-  --text: 10,18,30;
+  --background: 0,0,0;
+  --secondBackground: 45,55,72;
+  --text: 255, 255, 255;
   --textSecondary: 255,255,255;
   --primary: 22,115,255; 
-  --secondary: 10,18,30;
+  --secondary: 255,255,255;
   --tertiary: 231,241,251;
-  --cardBackground: 255,255,255;
-  --inputBackground: 255,255,255;
-  --navbarBackground: 255,255,255;
-  --modalBackground: 251,251,253;
+  --cardBackground: 45,55,72;
+  --inputBackground: 45,55,72;
+  --navbarBackground: 45,55,72;
+  --modalBackground: 26,32,44;
   --errorColor: 207,34,46;
-  --logoColor: #243A5A;
+  --logoColor: #fff;
 }
 
 .next-dark-theme {
-  --background: 26,32,44;
+  --background: 0,0,0;
   --secondBackground: 45,55,72;
-  --text: 237,237,238;
+  --text: 255, 255, 255;
   --textSecondary: 255,255,255;
   --primary: 22,115,255; 
-  --secondary: 10,18,30;
+  --secondary: 255,255,255;
   --tertiary: 231,241,251;
   --cardBackground: 45,55,72;
   --inputBackground: 45,55,72;
@@ -146,7 +151,7 @@ select {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+   scroll-behavior: smooth;
   }
   
   *,
@@ -155,7 +160,7 @@ select {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+    scroll-behavior: smooth !important;
   }
 
 }`;
