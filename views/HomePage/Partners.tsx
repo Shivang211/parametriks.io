@@ -49,7 +49,7 @@ export default function Partners() {
           </SwiperSlide>
         ))}
         {PARTNER_LOGOS.filter(isHDI).map((logo, index) => (
-          <SwiperSlide key={logo} style={{paddingTop : 35}}>
+          <SwiperSlide key={logo} style={{paddingTop : 34}}>
             <NextImage src={'/partners/' + logo} alt={normalizePartnerLogoName(logo)} width={128} height={58} />
           </SwiperSlide>
         ))}
