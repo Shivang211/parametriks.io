@@ -31,7 +31,7 @@ export default function Partners() {
       <Title>official partners with</Title>
       <Swiper
         modules={[Autoplay]}
-        slidesPerView={6}
+        slidesPerView={8}
         spaceBetween={30}
         loop={true}
         autoplay={{ delay: 0, disableOnInteraction: false, pauseOnMouseEnter: false, waitForTransition: false, stopOnLastSlide: false }}
@@ -49,7 +49,7 @@ export default function Partners() {
           </SwiperSlide>
         ))}
         {PARTNER_LOGOS.filter(isHDI).map((logo, index) => (
-          <SwiperSlide key={logo} style={{paddingTop : 34}}>
+          <SwiperSlide key={logo} style={{paddingTop : 35}}>
             <NextImage src={'/partners/' + logo} alt={normalizePartnerLogoName(logo)} width={128} height={58} />
           </SwiperSlide>
         ))}
