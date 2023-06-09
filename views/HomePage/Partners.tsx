@@ -33,9 +33,9 @@ export default function Partners() {
         modules={[Autoplay]}
         slidesPerView={8}
         spaceBetween={30}
-        loop={true}
-        autoplay={{ delay: 0, disableOnInteraction: false, pauseOnMouseEnter: false, waitForTransition: false, stopOnLastSlide: false }}
-        speed={3000}
+        // loop={true}
+        // autoplay={{ delay: 0, disableOnInteraction: false, pauseOnMouseEnter: false, waitForTransition: false, stopOnLastSlide: false }}
+        // speed={3000}
         breakpoints={{
           320: { slidesPerView: 2 },
           768: { slidesPerView: 4 },
