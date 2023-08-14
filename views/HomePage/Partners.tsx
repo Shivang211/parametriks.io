@@ -77,6 +77,7 @@ const PartnersWrapper = styled(Container)`
     will-change: transform;
     transition-timing-function: linear;
     user-select: none;
+    height: 170px;
   }
 
   .swiper-slide {
@@ -92,16 +93,10 @@ const PartnersWrapper = styled(Container)`
     background-color: white; 
   }
   .swiper-pagination-bullet-active {
-    background-color: yellow; // Change to your desired color
+    background-color: 520cfa; // Change to your desired color
   }
-  .swiper-button-next, .swiper-button-prev {
+  .swiper-pagination {
     /* Your styles here */
-    color: white; // Change to your desired color
-    width: 40px; // Adjust width
-    height: 40px; // Adjust height
-    border-radius: 50%; // Rounded buttons
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    transform: translateY(10px); // Adjust the value as needed
   }
 `;
