@@ -1,10 +1,12 @@
 import NextImage from 'next/image';
 import styled from 'styled-components';
-import  { Autoplay } from 'swiper';
+import  SwiperCore, { Autoplay, Pagination } from 'swiper';
 import { Swiper,SwiperSlide } from 'swiper/react';
 import Container from 'components/Container';
 import { media } from 'utils/media';
 import React, { useEffect } from 'react';
+
+SwiperCore.use([Pagination]);
 const PARTNER_LOGOS = [
   'university-of-california-berkeley-logo-vector.svg',
   'uc-davis-logo.png',
@@ -35,15 +37,17 @@ export default function Partners() {
       <Swiper
         modules={[Autoplay]}
         slidesPerView={8}
-        // spaceBetween={30}
+        pagination={ {clickable: true }}
+        navigation={{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }}
+        spaceBetween={30}
         // loop= {true}
         // autoplay={{ delay: 0, disableOnInteraction: false, pauseOnMouseEnter: false, waitForTransition: false, stopOnLastSlide: false }}
         // speed={3000}
-        // breakpoints={{
-        //   320: { slidesPerView: 2 },
-        //   768: { slidesPerView: 4 },
-        //   1025: { slidesPerView: 6 },
-        // }}
+        breakpoints={{
+          320: { slidesPerView: 2 },
+          768: { slidesPerView: 4 },
+          1025: { slidesPerView: 6 },
+        }}
         className="swiper-wrapper"
       >
         {nonHDILogos}
@@ -82,5 +86,22 @@ const PartnersWrapper = styled(Container)`
     &:hover {
       opacity: 1;
     }
+  }
+  .swiper-pagination-bullet {
+    /* Your styles here */
+    background-color: white; 
+  }
+  .swiper-pagination-bullet-active {
+    background-color: yellow; // Change to your desired color
+  }
+  .swiper-button-next, .swiper-button-prev {
+    /* Your styles here */
+    color: white; // Change to your desired color
+    width: 40px; // Adjust width
+    height: 40px; // Adjust height
+    border-radius: 50%; // Rounded buttons
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
