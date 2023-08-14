@@ -1,11 +1,12 @@
 import NextImage from 'next/image';
-import React from 'react';
 import styled from 'styled-components';
-import { Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import  SwiperCore, { Autoplay, Pagination } from 'swiper';
+import { Swiper,SwiperSlide } from 'swiper/react';
 import Container from 'components/Container';
 import { media } from 'utils/media';
+import React, { useEffect } from 'react';
 
+SwiperCore.use([Pagination]);
 const PARTNER_LOGOS = [
   'university-of-california-berkeley-logo-vector.svg',
   'uc-davis-logo.png',
@@ -16,14 +17,18 @@ const PARTNER_LOGOS = [
   'UC Santa Cruz Banana Slug UCSC.svg',
   'HDI-Logo.svg_.png'
 ];
-
-function isHDI(logo: string) {
-  return logo == 'HDI-Logo.svg_.png';
-}
-
-function isNotHDI(logo: string) {
-  return logo != 'HDI-Logo.svg_.png';
-}
+const nonHDILogos = PARTNER_LOGOS.filter(logo => logo != 'HDI-Logo.svg_.png')
+          .map((logo, index) => (
+            <SwiperSlide key ={logo}>
+              <img src={'/partners/' + logo} alt={logo.replace('.svg', '')} width={128} height={128} />
+            </SwiperSlide>
+          ))
+const HDILogos = PARTNER_LOGOS.filter(logo => logo == 'HDI-Logo.svg_.png')
+          .map((logo, index) => (
+            <SwiperSlide key ={logo} style={{paddingTop : 35}}>
+              <img src={'/partners/' + logo} alt={logo.replace('.svg', '')} width={128} height={58} />
+            </SwiperSlide>
+          ))
 
 export default function Partners() {
   return (
@@ -32,8 +37,10 @@ export default function Partners() {
       <Swiper
         modules={[Autoplay]}
         slidesPerView={8}
+        pagination={ {clickable: true }}
+        navigation={{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }}
         spaceBetween={30}
-        // loop={true}
+        // loop= {true}
         // autoplay={{ delay: 0, disableOnInteraction: false, pauseOnMouseEnter: false, waitForTransition: false, stopOnLastSlide: false }}
         // speed={3000}
         breakpoints={{
@@ -43,23 +50,11 @@ export default function Partners() {
         }}
         className="swiper-wrapper"
       >
-        {PARTNER_LOGOS.filter(isNotHDI).map((logo, index) => (
-          <SwiperSlide key={logo}>
-            <NextImage src={'/partners/' + logo} alt={normalizePartnerLogoName(logo)} width={128} height={128}/>
-          </SwiperSlide>
-        ))}
-        {PARTNER_LOGOS.filter(isHDI).map((logo, index) => (
-          <SwiperSlide key={logo} style={{paddingTop : 35}}>
-            <NextImage src={'/partners/' + logo} alt={normalizePartnerLogoName(logo)} width={128} height={58} />
-          </SwiperSlide>
-        ))}
+        {nonHDILogos}
+        {HDILogos}
       </Swiper>
     </PartnersWrapper>
   );
-}
-
-function normalizePartnerLogoName(logo: string) {
-  return logo.replace('.svg', '');
 }
 
 const Title = styled.h3`
@@ -91,5 +86,22 @@ const PartnersWrapper = styled(Container)`
     &:hover {
       opacity: 1;
     }
+  }
+  .swiper-pagination-bullet {
+    /* Your styles here */
+    background-color: white; 
+  }
+  .swiper-pagination-bullet-active {
+    background-color: yellow; // Change to your desired color
+  }
+  .swiper-button-next, .swiper-button-prev {
+    /* Your styles here */
+    color: white; // Change to your desired color
+    width: 40px; // Adjust width
+    height: 40px; // Adjust height
+    border-radius: 50%; // Rounded buttons
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
