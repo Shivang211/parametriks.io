@@ -13,6 +13,7 @@ const OverTitle = styled.span`
     background-color: #DD3166;
     line-height: 0;
     margin-right: 1em;
+    font-color: black !important;
   }
 
   font-size: 1.3rem;
@@ -20,6 +21,7 @@ const OverTitle = styled.span`
   font-weight: bold;
   line-height: 0;
   text-transform: uppercase;
+  font-color: black !important;
 
   ${media('<=desktop')} {
     line-height: 1.5;

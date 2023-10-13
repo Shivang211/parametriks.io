@@ -20,9 +20,10 @@ import { NewsletterModalContextProvider, useNewsletterModalContext } from 'conte
 import { NavItems } from 'types';
 
 const navItems: NavItems = [
-  { title: 'What We Do', href: '#what-we-do' },
-  { title: 'Application Spectrum', href: '#application-spectrum' },
-  { title: 'Dashboard', href: '#na', outlined: true },
+  { title: 'The Problem', href: '#problems', color: 'black' },
+  { title: 'What We Do', href: '#what-we-do', color: 'black' },
+  { title: 'Application Spectrum', href: '#application-spectrum', color:'black' },
+  { title: 'Dashboard', href: '#na', outlined: true, color: 'white' },
 ];
 
 const TinaCMS = dynamic(() => import('tinacms'), { ssr: false });
