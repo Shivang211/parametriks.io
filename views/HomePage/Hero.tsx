@@ -17,8 +17,7 @@ export default function Hero() {
         <CustomOverTitle id = "">changing the {"{"}insurance{"}"} world, the parametriks way</CustomOverTitle>
         <Heading>DISTRIBUTE INTELLIGENCE | GAIN CONTROL</Heading>
         <Description>
-        No barrier, no headlock, just unbridled thoughts that will reshape the insurance landscape! We aim at revolutionizing the integration of unparalleled and unique risk assessment data points in the way insurance services are designed.
-
+        Insurance is expensive, inefficient and hard to navigate. With today’s technology, we can do better. Parametriks is a team of highly qualified data scientists, software engineers and insurance experts who came together to solve this. By plugging Generative AI into IoT-generated dataflows, we optimise the insurance experience for all stakeholders.
         </Description>
         <CustomButtonGroup>
           <Button onClick={() => setIsModalOpened(true)}>
