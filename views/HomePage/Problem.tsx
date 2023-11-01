@@ -63,7 +63,7 @@ const Container = styled.div`
 `;
 
 const H1 = styled.div`
-color: #320CFA;
+color: #DD3166;
 font-family: tahoma;
 font-size: 3rem;
 font-weight: 100;

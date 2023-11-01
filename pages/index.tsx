@@ -16,6 +16,7 @@ import LandingPage from 'views/HomePage/LandingPage';
 import Problem from 'views/HomePage/Problem';
 import SmallSection from 'views/HomePage/SmallSection';
 import WhatWeDo from 'views/HomePage/WhatWeDo';
+import ContactUs from './contactUs';
 
 export default function Homepage({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
@@ -31,15 +32,19 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
         <WhiteBackgroundContainer>
           
           <Hero />
-          <hr></hr>
           <br id = 'problems'></br>
+          <hr></hr>
           <Problem></Problem>
           {/* <hr></hr> */}
-          <SmallSection></SmallSection>
-          {/* <hr></hr> */}
           <br id = 'what-we-do'></br>
+          <SmallSection ></SmallSection>
+          {/* <hr></hr> */}
+          <br ></br>
           <WhatWeDo></WhatWeDo>
+          <hr></hr>
           <Partners />
+          <br id = 'application-spectrum'></br>
+          {/* <ContactUs></ContactUs> */}
           
           
           {/* <BasicSection  imageUrl="/7sYl.gif" title="What We Do">

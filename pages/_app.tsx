@@ -22,7 +22,7 @@ import { NavItems } from 'types';
 const navItems: NavItems = [
   { title: 'The Problem', href: '#problems', color: 'black' },
   { title: 'What We Do', href: '#what-we-do', color: 'black' },
-  { title: 'Application Spectrum', href: '#application-spectrum', color:'black' },
+  { title: 'Contact Us', href: '#application-spectrum', color:'black' },
   { title: 'Dashboard', href: '#na', outlined: true, color: 'white' },
 ];
 

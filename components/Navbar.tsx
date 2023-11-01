@@ -118,6 +118,7 @@ const CustomButton = styled(Button)`
 const NavItemList = styled.div`
   display: flex;
   list-style: none;
+  color: white;
   
 
   ${media('<desktop')} {
@@ -139,21 +140,21 @@ const LogoWrapper = styled.a`
   color: rgb(var(--logoColor));
 `;
 
-const NavItemWrapper = styled.li<Partial<SingleNavItem>>`
-  background-color: ${(p) => (p.outlined ? 'rgb(var(--primary))' : 'transparent')};
+const NavItemWrapper = styled.div`
+  background-color: 
   border-radius: 0.5rem;
   font-size: 1.3rem;
   text-transform: uppercase;
   line-height: 2;
+  color: black;
 
   &:hover {
-    background-color: ${(p) => (p.outlined ? 'rgb(var(--primary), 0.8)' : 'transparent')};
     transition: background-color 0.2s;
   }
 
   a {
     display: flex;
-    color: ${(p) => (p.outlined ? 'rgb(var(--textSecondary))' : 'rgb(var(--text), 0.75)')};
+    color: black;
     letter-spacing: 0.025em;
     text-decoration: none;
     padding: 0.75rem 1.5rem;
