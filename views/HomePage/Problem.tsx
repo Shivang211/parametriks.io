@@ -70,8 +70,9 @@ font-size: 3rem;
 font-weight: 100;
 line-height: 1.5;
 text-transform: uppercase;
-white-space: nowrap;
+// white-space: nowrap;
 width: 100h;
+
 
 text-align: center; /* Center the text horizontally */
 `;
@@ -83,7 +84,7 @@ font-size: 2rem;
 font-weight: 100;
 line-height: 1.5;
 text-transform: uppercase;
-white-space: nowrap;
+// white-space: nowrap;
 width: 100h;
 margin-top: 5rem;
 text-align: center; /* Center the text horizontally */
@@ -95,11 +96,12 @@ font-size: 2rem;
 font-weight: 100;
 line-height: 1.5;
 text-transform: uppercase;
-white-space: nowrap;
+// white-space: nowrap;
 width: 100h;
 // margin-top: 5rem;
 text-align: center; /* Center the text horizontally */
-font-weight: bold
+font-weight: bold;
+// max-width:0%
 `;
 
 const TextBody = styled.div`
