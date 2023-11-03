@@ -35,6 +35,7 @@ Most of this data is not being harnessed, leading to a missed opportunity to sav
 const Box = styled.div`
 width: 100%;
   display: flex;
+  // padding-bottom: 10%
 `;
 
 const BoxLeft = styled.div`
@@ -53,13 +54,13 @@ width: 25%;
 `;
 
 const Container = styled.div`
-  position: relative;
   max-width: 130em;
   width: 100%;
   margin: 0 auto;
   padding: 0 2rem;
   color: black;
-  height: 70vh;
+  // height: ;
+  
 `;
 
 const H1 = styled.div`
@@ -70,8 +71,6 @@ font-weight: 100;
 line-height: 1.5;
 text-transform: uppercase;
 white-space: nowrap;
-overflow: hidden;
-position: relative;
 width: 100h;
 
 text-align: center; /* Center the text horizontally */
@@ -85,8 +84,6 @@ font-weight: 100;
 line-height: 1.5;
 text-transform: uppercase;
 white-space: nowrap;
-overflow: hidden;
-position: relative;
 width: 100h;
 margin-top: 5rem;
 text-align: center; /* Center the text horizontally */
@@ -99,8 +96,6 @@ font-weight: 100;
 line-height: 1.5;
 text-transform: uppercase;
 white-space: nowrap;
-overflow: hidden;
-position: relative;
 width: 100h;
 // margin-top: 5rem;
 text-align: center; /* Center the text horizontally */
@@ -115,7 +110,6 @@ font-weight: 100;
 line-height: 1.5;
 // white-space: nowrap;
 // overflow: hidden;
-position: relative;
 width: 50%;
 margin-top: 3rem;
 text-align: center; /* Center the text horizontally */
@@ -131,7 +125,6 @@ font-weight: 100;
 line-height: 1.5;
 // white-space: nowrap;
 // overflow: hidden;
-position: relative;
 width: 100%;
 margin-top: 3rem;
 text-align: center; /* Center the text horizontally */
@@ -147,7 +140,6 @@ font-weight: 100;
 line-height: 1.5;
 // white-space: nowrap;
 // overflow: hidden;
-position: relative;
 width: 100%;
 margin-top: 3rem;
 text-align: center; /* Center the text horizontally */
@@ -161,7 +153,6 @@ const Message = styled.div`
   display: block;
   font-weight: 900;
   overflow: hidden;
-  position: absolute;
   padding-left: 0.5rem;
   top: 0.2rem;
   left: 270px;

@@ -34,13 +34,13 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
           <Hero />
           <br id = 'problems'></br>
           <hr></hr>
-          <Problem></Problem>
+          <Problem />
           {/* <hr></hr> */}
           <br id = 'what-we-do'></br>
-          <SmallSection ></SmallSection>
+          <SmallSection/>
           {/* <hr></hr> */}
-          <br ></br>
-          <WhatWeDo></WhatWeDo>
+          
+          <WhatWeDo/>
           <hr></hr>
           <Partners />
           <br id = 'application-spectrum'></br>

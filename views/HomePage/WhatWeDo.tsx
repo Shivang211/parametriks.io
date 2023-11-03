@@ -56,8 +56,9 @@ const Container = styled.div`
   margin: 0 auto;
   padding: 0 2rem;
   color: black;
-  height: 100vh;
+  // height: 100vh;
   // background-color: black;
+  // margin-bottom : 10%
 `;
 
 const H1 = styled.div`
@@ -83,7 +84,7 @@ font-weight: 100;
 line-height: 1.5;
 // text-transform: uppercase;
 // white-space: nowrap;
-// overflow: hidden;
+overflow: hidden;
 position: relative;
 width: 100h;
 

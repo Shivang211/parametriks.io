@@ -9,13 +9,8 @@ export default function SmallSection() {
 }
 
 const Container = styled.div`
-  position: relative;
-  // max-width: 130em;
   width: 100%;
-  // margin: 0 auto;
-  // padding: 0 2rem;
   background-color: #DD3166;
-  height: 10vh;
 `;
 
 const H1 = styled.div`
@@ -24,10 +19,6 @@ font-family: tahoma;
 font-size: 2.5rem;
 font-weight: 100;
 line-height: 10vh;
-// text-transform: uppercase;
-// white-space: nowrap;
-// overflow: hidden;
-position: relative;
 width: 100h;
 font-style: italic;
 
