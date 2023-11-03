@@ -100,7 +100,7 @@ function NavItem({ href, title, outlined }: SingleNavItem) {
   }
 
   return (
-    <NavItemWrapper outlined={outlined}>
+    <NavItemWrapper >
       <NextLink href={href} passHref>
         <a>{title}</a>
       </NextLink>
