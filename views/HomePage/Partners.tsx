@@ -1,11 +1,12 @@
 import NextImage from 'next/image';
-import React from 'react';
 import styled from 'styled-components';
-import { Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import  SwiperCore, { Autoplay, Pagination } from 'swiper';
+import { Swiper,SwiperSlide } from 'swiper/react';
 import Container from 'components/Container';
 import { media } from 'utils/media';
+import React, { useEffect } from 'react';
 
+SwiperCore.use([Pagination]);
 const PARTNER_LOGOS = [
   'university-of-california-berkeley-logo-vector.svg',
   'uc-davis-logo.png',
@@ -16,14 +17,18 @@ const PARTNER_LOGOS = [
   'UC Santa Cruz Banana Slug UCSC.svg',
   'HDI-Logo.svg_.png'
 ];
-
-function isHDI(logo: string) {
-  return logo == 'HDI-Logo.svg_.png';
-}
-
-function isNotHDI(logo: string) {
-  return logo != 'HDI-Logo.svg_.png';
-}
+const nonHDILogos = PARTNER_LOGOS.filter(logo => logo != 'HDI-Logo.svg_.png')
+          .map((logo, index) => (
+            <SwiperSlide key ={logo}>
+              <img src={'/partners/' + logo} alt={logo.replace('.svg', '')} width={128} height={128} />
+            </SwiperSlide>
+          ))
+const HDILogos = PARTNER_LOGOS.filter(logo => logo == 'HDI-Logo.svg_.png')
+          .map((logo, index) => (
+            <SwiperSlide key ={logo} style={{paddingTop : 35}}>
+              <img src={'/partners/' + logo} alt={logo.replace('.svg', '')} width={128} height={58} />
+            </SwiperSlide>
+          ))
 
 export default function Partners() {
   return (
@@ -32,6 +37,8 @@ export default function Partners() {
       <Swiper
         modules={[Autoplay]}
         slidesPerView={8}
+        pagination={ {clickable: true }}
+        navigation={{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }}
         spaceBetween={30}
         loop={true}
         autoplay={{
@@ -50,16 +57,8 @@ export default function Partners() {
         }}
         className="swiper-wrapper"
       >
-        {PARTNER_LOGOS.filter(isNotHDI).map((logo, index) => (
-          <SwiperSlide key={logo}>
-            <NextImage src={'/partners/' + logo} alt={normalizePartnerLogoName(logo)} width={128} height={128}/>
-          </SwiperSlide>
-        ))}
-        {PARTNER_LOGOS.filter(isHDI).map((logo, index) => (
-          <SwiperSlide key={logo} style={{paddingTop : 35}}>
-            <NextImage src={'/partners/' + logo} alt={normalizePartnerLogoName(logo)} width={128} height={58} />
-          </SwiperSlide>
-        ))}
+        {nonHDILogos}
+        {HDILogos}
       </Swiper>
     </PartnersWrapper>
   );
@@ -91,6 +90,7 @@ const PartnersWrapper = styled(Container)`
     will-change: transform;
     transition-timing-function: linear;
     user-select: none;
+    height: 170px;
   }
 
   .swiper-slide {
@@ -100,5 +100,16 @@ const PartnersWrapper = styled(Container)`
     &:hover {
       opacity: 1;
     }
+  }
+  .swiper-pagination-bullet {
+    /* Your styles here */
+    background-color: white; 
+  }
+  .swiper-pagination-bullet-active {
+    background-color: 520cfa; // Change to your desired color
+  }
+  .swiper-pagination {
+    /* Your styles here */
+    transform: translateY(10px); // Adjust the value as needed
   }
 `;
