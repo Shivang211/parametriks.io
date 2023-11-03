@@ -20,9 +20,9 @@ html {
   --background: 0,0,0;
   --secondBackground: 45,55,72;
   --text: 255, 255, 255;
-  --textSecondary: 255,255,255;
+  --textSecondary: 255, 255, 255;
   --primary: 22,115,255; 
-  --secondary: 255,255,255;
+  --secondary: 0;
   --tertiary: 231,241,251;
   --cardBackground: 45,55,72;
   --inputBackground: 45,55,72;
@@ -36,9 +36,9 @@ html {
   --background: 0,0,0;
   --secondBackground: 45,55,72;
   --text: 255, 255, 255;
-  --textSecondary: 255,255,255;
+  --textSecondary: 0;
   --primary: 22,115,255; 
-  --secondary: 255,255,255;
+  --secondary: 0;
   --tertiary: 231,241,251;
   --cardBackground: 45,55,72;
   --inputBackground: 45,55,72;

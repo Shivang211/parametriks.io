@@ -40,9 +40,16 @@ export default function Partners() {
         pagination={ {clickable: true }}
         navigation={{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }}
         spaceBetween={30}
-        // loop= {true}
-        // autoplay={{ delay: 0, disableOnInteraction: false, pauseOnMouseEnter: false, waitForTransition: false, stopOnLastSlide: false }}
-        // speed={3000}
+        loop={true}
+        autoplay={{
+          delay: 3000, // Adjust the delay to the desired time interval (in milliseconds)
+          disableOnInteraction: false,
+          pauseOnMouseEnter: false,
+          waitForTransition: false,
+          stopOnLastSlide: false,
+        }}
+        
+        speed={3000}
         breakpoints={{
           320: { slidesPerView: 2 },
           768: { slidesPerView: 4 },
@@ -57,11 +64,17 @@ export default function Partners() {
   );
 }
 
-const Title = styled.h3`
+function normalizePartnerLogoName(logo: string) {
+  return logo.replace('.svg', '');
+}
+
+const Title = styled.div`
   font-size: 1.3rem;
   letter-spacing: 0.02em;
   line-height: 0;
   text-transform: uppercase;
+  color: black;
+  font-weight: medium;
   
   margin-bottom: 5rem;
   text-align: center;
